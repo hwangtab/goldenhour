@@ -51,6 +51,15 @@ const tourDates = [
     instagram: "@cafedongbaek",
     instagramLink: "https://www.instagram.com/cafedongbaek/", // 실제 링크 필요
   },
+  { // Add new Jeju venue
+    city: "제주",
+    venue: "모티프",
+    date: "2025-05-23", // 실제 날짜
+    address: "제주 서귀포시 대정읍 중산간서로 2278", // 실제 주소 업데이트
+    specialEvent: "드랙쇼가 열리는 복합문화공간", // 실제 이벤트
+    instagram: "@motif.jeju",
+    instagramLink: "https://www.instagram.com/motif.jeju/", // 추정 링크
+  },
 ];
 
 // 날짜 포맷 함수 (간단 버전)
