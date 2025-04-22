@@ -101,12 +101,14 @@ export default function TourPage() {
       <h1 className="font-serif text-4xl font-bold mb-12 text-center text-neutral-800">투어 일정</h1> {/* text-gray-800 -> text-neutral-800 */}
 
       {/* City Filter Buttons */}
-      <div className="flex justify-center gap-2 mb-10 overflow-x-auto scrollbar-hide"> {/* Removed flex-wrap, added overflow-x-auto and scrollbar-hide */}
+      {/* Use Grid for mobile (3 columns), Flex for desktop */}
+      <div className="grid grid-cols-3 gap-2 place-items-center md:flex md:justify-center md:gap-2 mb-10">
         {cities.map((city) => (
           <button
             key={city}
             onClick={() => handleCityChange(city)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 transform active:scale-95 ${ // transition-colors -> transition-all, transform, active:scale-95 추가
+            // Removed w-[30%] as grid handles width
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 transform active:scale-95 ${
               selectedCity === city
                 ? 'bg-roseGold text-neutral-800 shadow' // text-white -> text-neutral-800
                 : 'bg-white text-neutral-600 hover:bg-beige hover:text-roseGold border border-gray-200 hover:scale-105' // hover:scale-105 추가
