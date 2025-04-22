@@ -67,8 +67,8 @@ const formatDate = (dateString: string) => {
 export default function TourPage() {
   const [selectedCity, setSelectedCity] = useState('전체'); // 선택된 도시 상태
 
-  // 도시 목록 추출 ('전체' 포함)
-  const cities = ['전체', ...new Set(tourDates.map(item => item.city))];
+  // 도시 목록 (원하는 순서대로 직접 정의)
+  const cities = ['전체', '서울', '수원', '대구', '부산', '제주'];
 
   // 필터 변경 핸들러
   const handleCityChange = (city: string) => {
@@ -111,31 +111,26 @@ export default function TourPage() {
       <div className="max-w-4xl mx-auto">
         {/* Upcoming Shows */}
         {upcomingDates.length > 0 && (
-          <section className="mb-16">
+          <section> {/* Removed mb-16 */}
             <h2 className="font-myeongjo text-2xl font-semibold mb-6 text-roseGold border-b-2 border-roseGold pb-2">다가오는 공연</h2>
             <div>
               {upcomingDates.map((item, index) => (
-                // Wrapper for card and connector line
-                <div key={index} className="relative pb-8">
-                  {/* Existing Card */}
-                  <div className="bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-start sm:items-center transition-transform duration-300 hover:scale-[1.02]">
+                  <div key={index} className={`relative bg-white p-6 rounded-lg shadow-md flex flex-col sm:flex-row items-start sm:items-center transition-transform duration-300 hover:scale-[1.02] ${index < upcomingDates.length - 1 ? 'mb-8' : ''}`}>
                     <div className="w-full sm:w-1/4 mb-4 sm:mb-0 sm:pr-6 text-center sm:text-left">
-                      <p className="text-3xl font-bold text-golden">{formatDate(item.date).split(' ')[0].split('.')[2]}</p> {/* 날짜만 크게 */}
-                      <p className="text-sm text-neutral-500">{formatDate(item.date).split(' ')[0].substring(0, 7)} ({formatDate(item.date).split(' ')[1].replace('(', '').replace(')', '')})</p> {/* text-gray-500 -> text-neutral-500 */}
+                      <p className="text-3xl font-bold text-golden">{formatDate(item.date).split(' ')[0].split('.')[2]}</p>
+                      <p className="text-sm text-neutral-500">{formatDate(item.date).split(' ')[0].substring(0, 7)} ({formatDate(item.date).split(' ')[1].replace('(', '').replace(')', '')})</p>
                     </div>
                     <div className="w-full sm:w-3/4">
-                      <h3 className="font-serif text-2xl font-semibold mb-1 text-neutral-800">{item.city} - {item.venue}</h3> {/* text-gray-800 -> text-neutral-800 */}
-                      {/* Address with Map Link */}
+                      <h3 className="font-serif text-2xl font-semibold mb-1 text-neutral-800">{item.city} - {item.venue}</h3>
                       <a
                         href={`https://map.kakao.com/link/search/${encodeURIComponent(item.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-sm text-neutral-600 hover:text-golden transition-colors mb-2" // text-gray-600 -> text-neutral-600
+                        className="inline-flex items-center text-sm text-neutral-600 hover:text-golden transition-colors mb-2"
                       >
-                        <FaMapMarkerAlt className="mr-1 text-roseGold" /> {/* 지도 아이콘 추가 */}
+                        <FaMapMarkerAlt className="mr-1 text-roseGold" />
                         {item.address}
                       </a>
-                      {/* Special Event with potential link */}
                       {item.specialEvent && (
                         <p className="text-sm italic text-roseGold mb-2">
                           {item.specialEvent.includes("(@nayutas.kitchen)") ? (
@@ -151,20 +146,18 @@ export default function TourPage() {
                           )}
                         </p>
                       )}
-                      {/* Instagram Link (Logo Removed) */}
                       {item.instagramLink && (
-                          <Link href={item.instagramLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-skyBlue hover:text-golden transition-colors mt-2"> {/* mt-2 추가 */}
-                            <FaInstagram className="h-4 w-4 mr-1" /> {/* Instagram 아이콘으로 변경 */}
+                          <Link href={item.instagramLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm text-skyBlue hover:text-golden transition-colors mt-2">
+                            <FaInstagram className="h-4 w-4 mr-1" />
                             {item.instagram || '공연장 정보'}
                           </Link>
                       )}
-                    </div> {/* End of card content div (w-full sm:w-3/4) */}
-                  </div> {/* End of card div (bg-white...) */}
-                  {/* Connector Line (not for the last item) */}
-                  {index < upcomingDates.length - 1 && (
-                    <div className="absolute top-full left-1/2 -ml-px h-8 w-0.5 bg-roseGold/50" aria-hidden="true"></div>
-                  )}
-                </div> // End of wrapper div
+                    </div>
+                    {/* Connector Line (not for the last item) - Moved inside card div */}
+                    {index < upcomingDates.length - 1 &&
+                      <div className="absolute top-full left-1/4 -translate-x-1/2 h-8 w-0.5 bg-roseGold/50" aria-hidden="true"></div>
+                    }
+                  </div> // End of card div
               ))}
             </div>
           </section>
@@ -172,7 +165,7 @@ export default function TourPage() {
 
         {/* Past Shows */}
         {pastDates.length > 0 && (
-          <section>
+          <section className="mt-16"> {/* Added mt-16 to maintain spacing */}
             <h2 className="font-myeongjo text-2xl font-semibold mb-6 text-neutral-500 border-b-2 border-neutral-300 pb-2">지난 공연</h2> {/* text-gray-500 -> text-neutral-500, border-gray-300 -> border-neutral-300 */}
             <div className="space-y-6">
               {pastDates.map((item, index) => (
