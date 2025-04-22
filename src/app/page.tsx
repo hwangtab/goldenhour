@@ -1,7 +1,7 @@
 "use client"; // 클라이언트 컴포넌트로 변경
 
 import Link from 'next/link';
-import Image from 'next/image'; // Image 컴포넌트 임포트
+// import Image from 'next/image'; // Removed next/image import
 // Removed unused react-icons import
 import { useInView } from 'react-intersection-observer'; // useInView 임포트
 
@@ -26,12 +26,11 @@ export default function Home() {
         {/* Artist Silhouette/Image Placeholder */}
         {/* Artist Image */}
         <div className="mt-10 w-52 h-52 relative rounded-full overflow-hidden shadow-lg"> {/* 크기 및 그림자 조정 */}
-          <Image
-            src="/images/artist.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/artist.png`} // Use img tag with basePath
             alt="자이 아티스트 이미지"
-            fill // layout="fill" 대신 사용
-            className="object-cover" // objectFit="cover" 대신 사용
-            priority
+            className="w-full h-full absolute object-cover" // Style for fill effect
           />
         </div>
 

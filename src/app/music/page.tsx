@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css'; // 기본 스타일 임포트
-import Image from 'next/image';
+// import Image from 'next/image'; // Removed next/image import
 
 // 임시 트랙 데이터 (실제 음원 및 이미지 경로 필요)
 const tracks = [
@@ -184,13 +184,11 @@ export default function MusicPage() {
       <div className="w-full max-w-2xl bg-white shadow-xl rounded-lg overflow-hidden flex flex-col md:flex-row">
         {/* Album Artwork */}
         <div className="w-full md:w-1/2 relative aspect-square bg-gray-200"> {/* Added background color */}
-          <Image
-            src={currentTrack.artwork}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${currentTrack.artwork}`} // Use img tag with basePath
             alt={`${currentTrack.title} 앨범 아트워크`}
-            fill // layout="fill" 대신 사용
-            className="object-cover" // objectFit="cover" 대신 사용
-            priority // 첫 로딩 시 중요 이미지
-            // unoptimized 속성 제거
+            className="w-full h-full absolute object-cover" // Style for fill effect
           />
           {/* Overlay for Title */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
