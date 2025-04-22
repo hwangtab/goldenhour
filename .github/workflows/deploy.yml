@@ -22,6 +22,8 @@ jobs:
         run: npm install
 
       - name: Build Project 🔨
+        env: # Add environment variable for basePath
+          NEXT_PUBLIC_BASE_PATH: /goldenhour
         run: npm run build # This will generate the 'out' directory
 
       - name: Deploy to GitHub Pages 🚀

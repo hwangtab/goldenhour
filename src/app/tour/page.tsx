@@ -9,45 +9,45 @@ const tourDates = [
   {
     city: "서울",
     venue: "원두서점 갤러리",
-    date: "2025-05-10", // 예시 날짜
-    address: "서울시 마포구 와우산로 29길 14-1", // 예시 주소
-    specialEvent: "김경진 작가와 함께",
+    date: "2025-04-27", // 실제 날짜
+    address: "서울특별시 영등포구 도림로 278-4 2층", // 실제 주소
+    specialEvent: "김경진 작가와 함께", // 원래 기획안 내용으로 복구
     instagram: "@coffeebeansbookstore", // 인스타그램 계정 업데이트
     instagramLink: "https://www.instagram.com/coffeebeansbookstore/", // 인스타그램 링크 업데이트
   },
   {
     city: "대구",
     venue: "나발",
-    date: "2025-05-17", // 예시 날짜
-    address: "대구 중구 국채보상로 150길 48", // 예시 주소
-    specialEvent: "빅나인과 콜라보",
+    date: "2025-05-02", // 실제 날짜
+    address: "대구 중구 달구벌대로446길 23-7", // 실제 주소
+    specialEvent: "빅나인과 콜라보", // 원래 기획안 내용으로 복구
     instagram: "@nabal_acoustic",
     instagramLink: "https://www.instagram.com/nabal_acoustic/", // 실제 링크 필요
   },
   {
     city: "부산",
-    venue: "륜빌리지",
-    date: "2025-05-24", // 예시 날짜
-    address: "부산 금정구 금샘로 569", // 예시 주소
-    specialEvent: "나유타의 부엌(@nayutas.kitchen)과 함께",
+    venue: "륜빌리지Ryun Village", // 장소명 수정
+    date: "2025-05-11", // 실제 날짜
+    address: "부산 금정구 오륜대로 262", // 실제 주소
+    specialEvent: "나유타의 부엌(@nayutas.kitchen)과 함께", // 원래 기획안 내용으로 복구
     instagram: "@cafe_ryun_official",
     instagramLink: "https://www.instagram.com/cafe_ryun_official/", // 실제 링크 필요
   },
   {
     city: "수원",
     venue: "롱플레이어",
-    date: "2025-05-31", // 예시 날짜
-    address: "수원시 팔달구 행궁로 11", // 예시 주소
-    specialEvent: "김동산과 블루이웃과 함께",
+    date: "2025-05-15", // 실제 날짜
+    address: "경기 수원시 팔달구 정조로886번길 12 롱플레이어", // 실제 주소
+    specialEvent: "김동산과 블루이웃과 함께", // 원래 기획안 내용으로 복구
     instagram: "@long_player",
     instagramLink: "https://www.instagram.com/long_player/", // 실제 링크 필요
   },
   {
     city: "제주",
     venue: "동백",
-    date: "2025-06-07", // 예시 날짜
-    address: "제주시 구좌읍 동복로 83", // 예시 주소
-    specialEvent: "자연과 함께하는 공연",
+    date: "2025-05-24", // 실제 날짜
+    address: "제주 제주시 조천읍 동백로 68", // 실제 주소
+    specialEvent: "자연과 함께하는 공연", // 원래 기획안 내용으로 복구
     instagram: "@cafedongbaek",
     instagramLink: "https://www.instagram.com/cafedongbaek/", // 실제 링크 필요
   },

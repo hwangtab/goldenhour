@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image'; // Image 컴포넌트 임포트
-import { FaInstagram, FaFacebookF, FaLink } from 'react-icons/fa'; // react-icons 임포트
+// Removed unused react-icons import
 import { useInView } from 'react-intersection-observer'; // useInView 임포트
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* Title */}
         <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
-          Golden Hour: '봄의 흐름' 투어
+          Golden Hour: '봄의 흐름' 투어 {/* Escaped single quotes */}
         </h1>
 
         {/* Artist Silhouette/Image Placeholder */}
