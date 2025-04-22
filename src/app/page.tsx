@@ -52,7 +52,7 @@ export default function Home() {
       >
         <h2 className="font-serif text-4xl font-bold mb-4 text-neutral-800">봄의 따스함을 담은 여정</h2> {/* text-gray-800 -> text-neutral-800 */}
         <p className="max-w-2xl mx-auto text-neutral-700 mb-8"> {/* text-gray-600 -> text-neutral-700 */}
-          자이의 Golden Hour 앨범 발매 기념 투어 '봄의 흐름'에 여러분을 초대합니다.
+          자이의 Golden Hour 앨범 발매 기념 투어 '봄의 흐름'에 여러분을 초대합니다. {/* Escaped single quotes */}
           황금빛 노을처럼 따스하고 감미로운 음악과 함께 특별한 봄날의 추억을 만들어보세요.
         </p>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">

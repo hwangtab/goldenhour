@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
         {/* Copyright Section */}
         <div className="mt-10 pt-8 border-t border-neutral-300/50 text-center text-neutral-500">
-          <p>©2025 by 한국스마트협동조합</p>
+          <p>&copy;2025 by 한국스마트협동조합</p> {/* Escaped copyright symbol */}
         </div>
       </div>
     </footer>
