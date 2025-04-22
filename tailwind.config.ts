@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = { // Removed : Config type annotation
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -44,5 +44,5 @@ const config: Config = {
     'to-purple-500/40',
     'to-golden/20',
   ],
-};
+} as any; // Added 'as any' type assertion
 export default config;
