@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* Title */}
         <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
-          Golden Hour: '봄의 흐름' 투어 {/* Escaped single quotes */}
+          Golden Hour: <br /> '봄의 흐름' 투어 {/* Added <br /> for line break */}
         </h1>
 
         {/* Artist Silhouette/Image Placeholder */}

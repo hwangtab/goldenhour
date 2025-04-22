@@ -101,7 +101,7 @@ export default function TourPage() {
       <h1 className="font-serif text-4xl font-bold mb-12 text-center text-neutral-800">투어 일정</h1> {/* text-gray-800 -> text-neutral-800 */}
 
       {/* City Filter Buttons */}
-      <div className="flex justify-center flex-wrap gap-2 mb-10">
+      <div className="flex justify-center gap-2 mb-10 overflow-x-auto scrollbar-hide"> {/* Removed flex-wrap, added overflow-x-auto and scrollbar-hide */}
         {cities.map((city) => (
           <button
             key={city}

@@ -20,3 +20,27 @@ body {
 .rhap_volume-controls {
   display: none !important;
 }
+
+/* react-h5-audio-player adjustments */
+.rhap_container {
+  transform: scale(0.8);
+  transform-origin: center;
+  box-shadow: none !important; /* Remove default shadow */
+  padding: 10px 15px !important; /* Override default padding */
+  background-color: transparent !important; /* Ensure no background interferes */
+}
+
+/* Hide volume controls section */
+.rhap_volume-controls {
+  display: none !important;
+}
+
+/* Adjust progress bar height slightly */
+.rhap_progress-bar {
+  height: 5px !important;
+}
+.rhap_progress-indicator {
+   width: 13px !important;
+   height: 13px !important;
+   top: -4px !important; /* Adjust position due to height change */
+}
