@@ -11,6 +11,7 @@ body {
 
 body {
   /* Default font will be applied in layout.tsx */
+  word-break: keep-all; /* Prevent awkward word breaks in Korean */
 }
 
 /* Removed all custom react-h5-audio-player styles to reset */

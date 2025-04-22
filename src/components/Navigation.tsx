@@ -107,7 +107,7 @@ export default function Navigation() {
                 onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   pathname === link.href
-                    ? 'bg-roseGold text-white'
+                    ? 'bg-roseGold text-neutral-800' // text-white -> text-neutral-800
                     : 'text-gray-700 hover:bg-beige hover:text-golden'
                 }`}
               >
