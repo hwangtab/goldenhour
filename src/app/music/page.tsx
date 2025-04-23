@@ -221,7 +221,7 @@ export default function MusicPage() {
           {/* Audio Player Component */}
           <AudioPlayer
             autoPlayAfterSrcChange={true} // 곡 변경 시 자동 재생
-            src={currentTrack.src} // 실제 음원 파일 경로 필요
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${currentTrack.src}`} // Add basePath to src
             onEnded={handleNextTrack} // 현재 곡 끝나면 다음 곡 재생
             showSkipControls={true} // 이전/다음 버튼 표시
             onClickNext={handleNextTrack}
